@@ -1,0 +1,33 @@
+.cart{
+    position: absolute;
+    background-color: #f9f9f9;
+    height: 200px;
+    min-width: 304px !important;
+    right: -5px;
+    top: 48px;
+    border:1px solid #efefef;
+}
+.cart-Item{
+    height:60px;
+    padding:10px;
+    display: flex;   
+    
+}
+.cart-ItemImg{
+    height:50px;
+    width:50px;
+}
+.cart-itemDiscription{
+    padding-left:10px;
+    color:#a2a2a2;
+}
+.cart .list-Item hr{
+    margin-left:10px;
+    margin-right:10px;
+}
+.cart-itemDiscription span{
+    font-size: 85%;
+}
+.hide{
+    display: none;
+}
