@@ -9,8 +9,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      movies:'',
-      cart:'0', 
+      movies:'',       
       searchText:'',
       displayCart:false,
       search:[{
@@ -68,7 +67,7 @@ class App extends Component {
       <Route path="/airports" component={Airport}/>
       <Route path="/cities" component={City}/> */}
       
-      <div className="container" style={{marginTop:'56px'}} >
+      <div className="container-fluid" style={{marginTop:'56px'}} >
         <Movies search={this.state.search} />      
       </div>
      </div>

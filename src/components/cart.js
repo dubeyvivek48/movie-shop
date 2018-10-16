@@ -19,7 +19,7 @@ const Cart=(props)=>{
     });
            
     return(
-        <div  className={props.showCart?"show cart":"hide cart"}>  
+        <div  className={props.showCart?"show shadow cart":"hide cart"}>  
         <ul style={{padding:'0'}}>  
            {items}
         </ul>   
