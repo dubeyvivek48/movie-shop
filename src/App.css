@@ -35,3 +35,21 @@ margin-left:10px;
 .navbar-brand span{
    text-shadow: 1px 1px #dc3545, 2px 2px #dc3545, 3px 3px #1b1e21, 4px 4px #1b1e21;
 }
+
+.mt-56{
+margin-top:56px;
+}
+.mt-140{
+  margin-top:140px;
+}
+nav{
+  transition:all .5s;
+  
+}
+.cart-link{
+  color:#fff !important;
+}
+.flex{
+  display:flex;
+  justify-content: space-between;
+}

@@ -9,6 +9,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
+      navToggle:'false',
       movies:'',       
       searchText:'',
       displayCart:false,
@@ -55,20 +56,34 @@ class App extends Component {
       displayCart:show
     })
   }
-  addToCartHandler=()=>{
-    
+  CartHandler=(index1)=>{
+    console.log(index1)
+    let cart=this.state.search;
+    cart.map((item,index)=>{
+      if(index===index1){
+        let newItem=this.state.search[index];
+        this.setState({
+          cart:[...this.state.cart ,newItem ]
+        })
+      }
+    })
+  }
+  handleNavtoggle=()=>{
+    let toggle= this.state.navToggle?false:true;
+    this.setState({navToggle:toggle})
+    console.log('toggle :'+toggle)
   }
   
   render() {
     return (
       <div >
-      <Navbar search={this.state.searchText} searchString={this.searchmovie} cart={this.state.cart} cartHandler={this.showCartHandler} showCart={this.state.displayCart} />
+      <Navbar search={this.state.searchText} toggle={this.handleNavtoggle} togleClass={this.state.navToggle} searchString={this.searchmovie} cart={this.state.cart} cartHandler={this.showCartHandler} showCart={this.state.displayCart} />
       {/* <Route path="/" component={Home}/>
       <Route path="/airports" component={Airport}/>
       <Route path="/cities" component={City}/> */}
       
-      <div className="container-fluid" style={{marginTop:'56px'}} >
-        <Movies search={this.state.search} />      
+      <div className={this.state.navToggle?'mt-56 container-fluid':'mt-140 container-fluid'}  >
+        <Movies search={this.state.search}  addToCart={this.CartHandler} />      
       </div>
      </div>
     );
