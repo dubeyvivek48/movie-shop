@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-//import { Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import Notfound from './components/NotFound';
+
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -71,21 +73,24 @@ class App extends Component {
   handleNavtoggle=()=>{
     let toggle= this.state.navToggle?false:true;
     this.setState({navToggle:toggle})
-    console.log('toggle :'+toggle)
+    console.log('toggle :'+toggle);
   }
   
   render() {
     return (
       <div >
       <Navbar search={this.state.searchText} toggle={this.handleNavtoggle} togleClass={this.state.navToggle} searchString={this.searchmovie} cart={this.state.cart} cartHandler={this.showCartHandler} showCart={this.state.displayCart} />
-      {/* <Route path="/" component={Home}/>
-      <Route path="/airports" component={Airport}/>
-      <Route path="/cities" component={City}/> */}
+      <BrowserRouter>
+      <Switch>
       
-      <div className={this.state.navToggle?'mt-56 container-fluid':'mt-140 container-fluid'}  >
-        <Movies search={this.state.search}  addToCart={this.CartHandler} />      
-      </div>
-     </div>
+        <Route exact path="/"  render={()=> <Movies navToggle={this.state.navToggle}  search={this.state.search}  addToCart={this.CartHandler} />} />
+        <Route path="/" render={()=> <Notfound />} />
+        
+        </Switch>
+      </BrowserRouter>
+      {/* */}
+          
+      </div>     
     );
   }
 }
