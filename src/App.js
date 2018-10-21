@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Notfound from './components/NotFound';
-
+import MovieDetail from './components/movieDetails';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -11,6 +11,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
+      movieDetails:[{}],
       navToggle:'false',
       movies:'',       
       searchText:'',
@@ -31,6 +32,7 @@ class App extends Component {
      }]     
     }
   }
+  movieDetl=[{}]
    searchmovie=(e)=>{
      let mobi=fetch('http://www.omdbapi.com/?s='+ e.target.value +'&apikey=34d9da6c')
      .then(response => response.json())
@@ -75,6 +77,11 @@ class App extends Component {
     this.setState({navToggle:toggle})
     console.log('toggle :'+toggle);
   }
+  handleMovieDetails=(data)=>{
+    this.setState({
+      movieDetails:data
+    })
+  }
   
   render() {
     return (
@@ -84,8 +91,10 @@ class App extends Component {
       <Switch>
       
         <Route exact path="/"  render={()=> <Movies navToggle={this.state.navToggle}  search={this.state.search}  addToCart={this.CartHandler} />} />
-        <Route path="/" render={()=> <Notfound />} />
         
+        
+        <Route path="/:id" exact render={(props)=> <MovieDetail navToggle={this.state.navToggle}  {...props} HandleMobi={this.handleMovieDetails} movieDetails={this.state.movieDetails}/>} />
+        <Route path="/" render={()=> <Notfound />} />
         </Switch>
       </BrowserRouter>
       {/* */}
