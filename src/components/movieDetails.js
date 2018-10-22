@@ -18,7 +18,7 @@ class MovieDetails extends Component {
                <div class="card-body">
               
                <hr />
-               <a class="btn buy cart-link btn-primary shadow"><i class="fas fa-shopping-cart"></i> Add to cart</a>
+               <a class="btn buy cart-link btn-primary shadow" onClick={this.props.addToCart}><i class="fas fa-shopping-cart"></i> Add to cart</a>
                 <a class="btn btn-primary cart-link shadow"><i class="fas fa-bolt"></i>  Buy  </a>
                 <br></br>
                 </div>

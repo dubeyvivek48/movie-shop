@@ -51,7 +51,9 @@ class App extends Component {
       //    .then(data=> console.log("\n TTId"+newResult))
       // })
   }
-
+  callCartHandler=()=>{
+    console.log("cartHandler")
+  }
   showCartHandler=()=>{
     let show=this.state.displayCart;
     show=show?false:true;
@@ -93,7 +95,7 @@ class App extends Component {
         <Route exact path="/"  render={()=> <Movies navToggle={this.state.navToggle}  search={this.state.search}  addToCart={this.CartHandler} />} />
         
         
-        <Route path="/:id" exact render={(props)=> <MovieDetail navToggle={this.state.navToggle}  {...props} HandleMobi={this.handleMovieDetails} movieDetails={this.state.movieDetails}/>} />
+        <Route path="/:id" exact render={(props)=> <MovieDetail navToggle={this.state.navToggle}  {...props} HandleMobi={this.handleMovieDetails} movieDetails={this.state.movieDetails} addToCart={this.callCartHandler}/>} />
         <Route path="/" render={()=> <Notfound />} />
         </Switch>
       </BrowserRouter>

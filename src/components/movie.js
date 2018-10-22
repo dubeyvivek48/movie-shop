@@ -8,7 +8,7 @@ const Movie=(props)=>{
         <div className="card shadow" >
                 <img className="card-img-top img-responsive" src={props.info.Poster=="N/A"?Img:props.info.Poster} alt="Card image cap" />
                 <div className="card-body">
-                <Link to={ '/'+props.info.imdbID }> <h5 className="card-title ">{props.info.Title}</h5></Link>
+                <Link to={ '/'+props.info.imdbID } > <h5 className="card-title ">{props.info.Title}</h5></Link>
                     <hr></hr>
                     <p className="card-text"> Type: {props.info.Type}</p>
                     <p className="card-text"> Price: ${props.info.imdbID.substr(6, 3)}</p>
