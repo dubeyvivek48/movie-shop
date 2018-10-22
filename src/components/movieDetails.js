@@ -58,9 +58,7 @@ class MovieDetails extends Component {
                         <p> {"Country : "+this.props.movieDetails.Country} </p>
                         <hr />
                         <p> {"DVD : "+this.props.movieDetails.DVD} </p>
-                        <hr />
-                       
-                        
+                        <hr />                    
                         <p> {"Language : "+this.props.movieDetails.Language} </p>
                         <hr />
                         <p> {"Metascore : "+this.props.movieDetails.Metascore} </p>
@@ -68,8 +66,7 @@ class MovieDetails extends Component {
                         <p> {"Production : "+this.props.movieDetails.Production} </p>
                         <hr />
                         <p> {"Rated: "+this.props.movieDetails.Rated} </p>
-                        <hr />
-                        
+                        <hr />                        
                         <p> {"Released : "+this.props.movieDetails.Released} </p>
                         <hr />
                         <p> {"Response : "+this.props.movieDetails.Response} </p>
