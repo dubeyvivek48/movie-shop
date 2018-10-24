@@ -74,6 +74,13 @@ class App extends Component {
       }
     })
   }
+
+
+  addToCartByIMDBID=()=>{
+
+  }
+
+  
   handleNavtoggle=()=>{
     let toggle= this.state.navToggle?false:true;
     this.setState({navToggle:toggle})
