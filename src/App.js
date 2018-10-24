@@ -11,7 +11,7 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      movieDetails:[{}],
+      movieDetails:{},
       navToggle:'false',
       movies:'',       
       searchText:'',
@@ -37,10 +37,12 @@ class App extends Component {
      let mobi=fetch('http://www.omdbapi.com/?s='+ e.target.value +'&apikey=34d9da6c')
      .then(response => response.json())
       .then(data => {
-        console.log(data.Search)        
-        this.setState({search:data.Search
-        }
-          )});
+         
+        if(!(data.Search==undefined)){
+          console.log(data.Search)   
+          this.setState({search:data.Search})
+        }  
+        });
       this.setState({
         searchText: e.target.value    
       })
