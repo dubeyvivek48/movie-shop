@@ -1,11 +1,12 @@
 import React from 'react';
 import Cart from './cart';
+import SearchResult from'./searchResult';
 //import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const Navbar=(props)=>{
 
     return(
         <nav className="navbar navbar-expand-md shadow navbar-dark fixed-top bg-dark">
-      
+
       <a href="#" className="navbar-brand"><span style={{color:'#ff1d1d', fontSize:'23px', paddingRight:'1px'}}>M</span>obi<span style={{color:'#ff1d1d', fontSize:'23px', padding:'1px'}}>S</span>tore</a>
       <button className="navbar-toggler" onClick={props.toggle} type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
@@ -20,18 +21,17 @@ const Navbar=(props)=>{
                  <input className="form-control mr-sm-2" style={{paddingLeft:'35px' }} onChange={(e)=>props.searchString(e)} value={props.search}  type="text" placeholder="Search" aria-label="Search" />
                  <i className="fas fa-search "  style={{position:'absolute' ,left:"10px", color:'#989898', top:'51.7%', transform:"translateY(-50%)" }}></i>
                  <div className="btn btn-primary shadow"  style={{position:"relative"}} onClick={props.cartHandler}><i className="fas  fa-shopping-cart"></i>
+        {/* <SearchResult searchResult={props.searchResult} /> */}
         <Cart cart={props.cart}  showCart={props.showCart}/>
+
+
         </div>
         <div className="btn ml-2" > <i class="fas fa-user shadow" style={{color:'#ffffff', fontSize:'22px', position:'relative',top:'1px' }}></i>
-        
+
         </div>
         </form>
-
-        
-       
-        
       </div>
-    </nav>    
+    </nav>
     )
 
 }

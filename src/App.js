@@ -97,7 +97,7 @@ class App extends Component {
   render() {
     return (
       <div >
-      <Navbar search={this.state.searchText} toggle={this.handleNavtoggle} togleClass={this.state.navToggle} searchString={this.searchmovie} cart={this.state.cart} cartHandler={this.showCartHandler} showCart={this.state.displayCart} />
+      <Navbar search={this.state.searchText} searchResult={this.state.Search} toggle={this.handleNavtoggle} togleClass={this.state.navToggle} searchString={this.searchmovie} cart={this.state.cart} cartHandler={this.showCartHandler} showCart={this.state.displayCart} />
       <BrowserRouter>
       <Switch>
       
